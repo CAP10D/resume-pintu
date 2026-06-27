@@ -64,3 +64,18 @@ a{
     color: #0066cc;
     text-decoration: underline;
 }
+.project-list li{
+    margin-bottom: 1rem;
+}
+a:hover{
+    color: #0066cc;
+    
+}
+
+span{
+    font-weight: 600;
+    margin-right: 0.5rem;
+}
+.project-date{
+    
+}
