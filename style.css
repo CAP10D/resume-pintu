@@ -93,3 +93,44 @@ span{
     padding: 0.5rem 1rem;
     border-radius: 5px;
 }
+
+/* responsive 1*/
+@media (max-width: 768px) {
+    body{
+        padding: 5%;
+    }
+    .container{
+        padding: 5%;
+    }
+    h1.name{
+        font-size: 2rem;
+    }
+    .project-list li{
+        margin-bottom: 0.5rem;
+    }
+}
+/* responsive 2 */
+@media (max-width: 480px) {
+    body{
+        padding: 2%;
+    }
+    .container{
+        padding: 2%;
+    }
+    h1.name{
+        font-size: 1.5rem;
+    }
+    .project-list li{
+        margin-bottom: 0.25rem;
+    }
+}
+/* advance responsive for contact-info */
+@media (max-width: 1123px) {
+    .contact-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .contact-info td {
+        margin-bottom: 0.5rem;
+    }
+}
