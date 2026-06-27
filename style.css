@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    padding: 5% 15%;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    padding: 5%;
+}
+.bio{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 0.1rem;
+}
+h1.name{
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #000;
+}
+.address,.name{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;   
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+tr.contact-info{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+}
+td.phone,.linkdIn,.mail,.github{
+    display: flex;
+    align-items: center;
+}
+img{
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+.email-fallback{
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+}
+
+.email-fallback a{
+    color: #0066cc;
+    text-decoration: underline;
+}
