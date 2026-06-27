@@ -7,6 +7,7 @@
 body{
     padding: 5% 15%;
 }
+/* container section */
 .container{
     display: flex;
     flex-direction: column;
@@ -17,6 +18,7 @@ body{
     width: 100%;
     padding: 5%;
 }
+/* Bio section */
 .bio{
     display: flex;
     justify-content: space-between;
@@ -64,6 +66,7 @@ a{
     color: #0066cc;
     text-decoration: underline;
 }
+/* project section */
 .project-list li{
     margin-bottom: 1rem;
 }
@@ -86,6 +89,7 @@ span{
     justify-content: center;
     margin-bottom: 1rem;
 }
+/* download section */
 .download a{
     text-decoration: none;
     color: #fff;
@@ -133,4 +137,48 @@ span{
     .contact-info td {
         margin-bottom: 0.5rem;
     }
+}
+
+/* Print-specific rules to reduce margins and force single-page output */
+@page {
+    size: A4 portrait;
+    margin: 5mm;
+}
+@media print {
+    /* use A4 exact dimensions for predictable layout */
+    html, body { height: 297mm; margin: 0; padding: 0; -webkit-print-color-adjust: exact; }
+
+    body { padding: 0; }
+
+    /* Hide download section during print */
+    .accessibility, .download { display: none; }
+
+    /* Make container match page height and hide overflow so content won't create a second page */
+    .container{
+        width: auto;
+        padding: 6mm;
+        border: none;
+        box-shadow: none;
+        page-break-after: avoid;
+        page-break-inside: avoid;
+        break-inside: avoid;
+        -webkit-column-break-inside: avoid;
+        overflow: hidden;
+        height: calc(297mm - 10mm); /* page height minus top+bottom margins (2*5mm) */
+    }
+
+    /* Prevent breaking inside important blocks */
+    .bio, .project-list, table, .soft-skills-table, .accessibility, .download {
+        page-break-inside: avoid;
+        break-inside: avoid;
+        -webkit-column-break-inside: avoid;
+    }
+
+    /* Slightly reduce text/spacing for print to help fit */
+    h1.name { font-size: 1.9rem; }
+    .project-list li { margin-bottom: 0.4rem; }
+    .email-fallback { font-size: 0.8rem; }
+
+    /* Final fallback: tiny scale if content still overflows */
+    .container[data-scale-needed="true"] { transform-origin: top left; transform: scale(0.98); }
 }
